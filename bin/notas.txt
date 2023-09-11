@@ -1,0 +1,8 @@
+-- Tabela "Usuario"
+CREATE TABLE Usuario (
+    id INT,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    senha CHAR (100) NOT NULL,
+    PRIMARY KEY (id)
+);
