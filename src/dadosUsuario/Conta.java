@@ -1,16 +1,18 @@
-public class Categoria {
+package dadosUsuario;
+
+public class Conta {
     private int id;
     private int idUsuario;
     private String nome;
-    private String tipo; // Pode ser 'despesa' ou 'receita'
 
-    public Categoria(int id, int idUsuario, String nome, String tipo) {
+    // Construtor
+    public Conta(int id, int idUsuario, String nome) {
         this.id = id;
         this.idUsuario = idUsuario;
         this.nome = nome;
-        this.tipo = tipo;
     }
 
+    // Getters e Setters
     public int getId() {
         return id;
     }
@@ -30,12 +32,5 @@ public class Categoria {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
 }
+
