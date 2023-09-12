@@ -33,5 +33,4 @@ public class InserirConfiguracao {
         System.out.println("Configuração inserida com sucesso!");
         statement.close();
     }
-
 }

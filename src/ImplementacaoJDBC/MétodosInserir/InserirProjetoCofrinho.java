@@ -3,18 +3,15 @@ package ImplementacaoJDBC.MétodosInserir;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.math.BigDecimal;
 
-
-public class InserirProjetoCofrinho {
-    
-    public static void main(String[] args) throws SQLException {
-        String url = "jdbc:mysql://localhost/estudante?user=estudante&password=estudante&useSSL=true";
-        String usuario = "estudante";
-        String senha = "estudante";
+public class InserirProjetoCofrinho{
+ public static void main(String[] args) throws SQLException {
+    String url = "jdbc:mysql://localhost/estudante?user=estudante&password=estudante&useSSL=true";
+    String usuario = "estudante";
+    String senha = "estudante";
 
         try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
             int id = 1; // Substitua pelo ID desejado
