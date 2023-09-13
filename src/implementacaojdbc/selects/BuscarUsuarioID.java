@@ -1,19 +1,22 @@
-package implementacaojdbc.metodosbuscar;
+package implementacaojdbc.selects;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class BuscarUsuarioID {
      public static void main(String[] args) throws SQLException {
         // Configura a conexão com o banco de dados
-        String url = "jdbc:mysql://localhost/estudante?user=estudante&password=estudante&useSSL=true";
-        String usuario = "estudante";
-        String senha = "estudante";
+        String url = "jdbc:mysql://127.0.0.1:3306/Camy?user=root&password=ditto&useSSL=true";
+        String usuario = "root";
+        String senha = "ditto";
 
-        int idUsuario = 1; // Substitua pelo ID do usuário que deseja buscar
+       Scanner scanner = new Scanner(System.in);
+       System.out.print("Digite o ID do Usuário: ");
+       int idUsuario = scanner.nextInt();
 
         try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
             String sql = "SELECT * FROM Usuario WHERE id = ?";
