@@ -4,7 +4,7 @@ Repositório destinado aos códigos do projeto de gerenciador financeiro
 
 # Estrutura do sistema
 
-- Esta aplicação está sendo formada pelas seguintes principais classes e conceitos de herança:
+- Esta aplicação está sendo formada pelas seguintes principais classes:
 - Usuario 
 - Categoria
 - ContasDinheiro
