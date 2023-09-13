@@ -8,19 +8,18 @@ import java.math.BigDecimal;
 
 public class InserirMeta {
     public static void main(String[] args) throws SQLException {
-        // Configura a conexão com o banco de dados
+
         String url = "jdbc:mysql://127.0.0.1:3306/Camy?user=root&password=ditto&useSSL=true";
         String usuario = "root";
         String senha = "ditto";
 
         try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
-            // Inserção 1
+
             inserirMeta(connection, 1, 1, new BigDecimal("1000.00"), 9, 2023, true);
 
-            // Inserção 2
+
             inserirMeta(connection, 2, 2, new BigDecimal("800.00"), 9, 2023, true);
 
-            // Inserção 3
             inserirMeta(connection, 3, 1, new BigDecimal("1500.00"), 10, 2023, true);
         } catch (SQLException e) {
             e.printStackTrace();

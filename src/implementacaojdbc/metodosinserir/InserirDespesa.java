@@ -28,7 +28,7 @@ public class InserirDespesa {
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, id);
         statement.setInt(2, idCategoria);
-        statement.setInt(3, id); // Substitua pelo id da conta correto
+        statement.setInt(3, id); 
         statement.setString(4, nome);
         statement.setString(5, descricao);
         statement.setDouble(6, valor);

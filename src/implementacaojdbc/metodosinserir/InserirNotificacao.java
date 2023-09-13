@@ -8,19 +8,17 @@ import java.sql.Timestamp;
 
 public class InserirNotificacao {
     public static void main(String[] args) throws SQLException {
-        // Configura a conexão com o banco de dados
+
         String url = "jdbc:mysql://127.0.0.1:3306/Camy?user=root&password=ditto&useSSL=true";
         String usuario = "root";
         String senha = "ditto";
 
         try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
-            // Inserção 1
+
             inserirNotificacao(connection, 1, 1, "Notificacao1", "Esta é uma notificação de exemplo 1.", false);
 
-            // Inserção 2
             inserirNotificacao(connection, 2, 1, "Notificacao2", "Esta é uma notificação de exemplo 2.", true);
 
-            // Inserção 3
             inserirNotificacao(connection, 3, 2, "Notificacao3", "Esta é uma notificação de exemplo 3.", false);
         } catch (SQLException e) {
             e.printStackTrace();

@@ -14,14 +14,14 @@ public class InserirProjetoCofrinho{
         String senha = "ditto";
 
         try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
-            int id = 1; // Substitua pelo ID desejado
-            String nome = "Projeto1"; // Nome do projeto cofrinho
-            String descricao = "Descrição do projeto cofrinho"; // Descrição do projeto cofrinho
-            Timestamp dataCriacao = new Timestamp(System.currentTimeMillis()); // Data de criação
-            Timestamp prazo = Timestamp.valueOf("2023-12-31 23:59:59"); // Prazo do projeto cofrinho
-            BigDecimal metaQuantia = new BigDecimal("1000.00"); // Meta de quantia do projeto cofrinho
-            int idUsuario = 1; // Substitua pelo ID do usuário associado
-            boolean ativo = true; // Define se o projeto cofrinho está ativo ou não
+            int id = 1; 
+            String nome = "Projeto1"; 
+            String descricao = "Descrição do projeto cofrinho"; 
+            Timestamp dataCriacao = new Timestamp(System.currentTimeMillis()); 
+            Timestamp prazo = Timestamp.valueOf("2023-12-31 23:59:59"); 
+            BigDecimal metaQuantia = new BigDecimal("1000.00"); 
+            int idUsuario = 1; 
+            boolean ativo = true; 
 
             String sql = "INSERT INTO ProjetoCofrinho (id, nome, descricao, data_criacao, prazo, meta_quantia, id_usuario, ativo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 

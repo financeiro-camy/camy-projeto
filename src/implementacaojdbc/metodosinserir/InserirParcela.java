@@ -24,7 +24,7 @@ public class InserirParcela {
                      "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = connection.prepareStatement(sql);
         statement.setInt(1, id);
-        statement.setInt(2, id); // Supondo que o ID do lançamento seja o mesmo para Despesa e Receita
+        statement.setInt(2, id); 
         statement.setString(3, tipoLancamento);
         statement.setInt(4, numero);
         statement.setDouble(5, valor);

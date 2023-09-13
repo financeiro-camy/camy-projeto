@@ -9,17 +9,17 @@ import java.math.BigDecimal;
 
 public class InserirRelatorioPc {
     public static void main(String[] args) throws SQLException {
-        
+
         String url = "jdbc:mysql://127.0.0.1:3306/Camy?user=root&password=ditto&useSSL=true";
         String usuario = "root";
         String senha = "ditto";
 
         try (Connection connection = DriverManager.getConnection(url, usuario, senha)) {
-            int id = 1; // Substitua pelo ID desejado
-            int idCofrinho = 1; // Substitua pelo ID do cofrinho associado
-            int idConta = 1; // Substitua pelo ID da conta associada
-            BigDecimal valor = new BigDecimal("100.00"); // Valor do relatório
-            Timestamp dataInsercao = new Timestamp(System.currentTimeMillis()); // Data de inserção
+            int id = 1; 
+            int idCofrinho = 1; 
+            int idConta = 1; 
+            BigDecimal valor = new BigDecimal("100.00"); 
+            Timestamp dataInsercao = new Timestamp(System.currentTimeMillis()); 
 
             String sql = "INSERT INTO RelatorioPc (id, id_cofrinho, id_conta, valor, data_insercao) VALUES (?, ?, ?, ?, ?)";
 
