@@ -4,7 +4,7 @@ import java.sql.SQLException;
 
 public class Principal {
    
-    public static void main(String[] args) throws SQLException {
+     public static void main(String[] args) throws SQLException {
         ProjetoCofrinhoDAO projetoCofrinhoDAO = new ProjetoCofrinhoDAO();
 
         LocalDate prazo = LocalDate.of(2023, 4, 20);

@@ -92,6 +92,8 @@ public class ProjetoCofrinhoDAO {
             Connection connection = Conexao.getConnection();
             PreparedStatement statement = connection.prepareStatement(sql);
         ) {
+            statement.setInt(1, id);
+            
             ResultSet rs = statement.executeQuery();
 
             if (rs.next()) {
