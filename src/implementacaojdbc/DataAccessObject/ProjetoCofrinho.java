@@ -98,10 +98,15 @@ public class ProjetoCofrinho {
         }
 
         public int getId_usuario() {
-            return 0;
+            return id_usuario;
         }
 
         public boolean getAtivo() {
             return false;
         }    
+
+        @Override
+        public String toString() {
+            return "Projeto Cofrinho [id=" + id + ", nome=" + nome + ", descrição=" + descricao + ", prazo =" + prazo + ", criação =" + data_criacao + ", meta =" + meta_quantia + ", ativo" + ativo + "]";
+        }
     }

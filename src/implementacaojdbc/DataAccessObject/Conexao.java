@@ -6,12 +6,12 @@ import java.sql.SQLException;
 
 public class Conexao{
   public static Connection getConnection() {
-        String url = "jdbc:mysql://localhost/estudante?user=estudante&password=estudante&useSSL=true";
+        String url = "jdbc:mysql://127.0.0.1:3306/Camy?user=root&password=ditto&useSSL=true";
         try {
             return DriverManager.getConnection(url);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            return null;
+            e.printStackTrace();
+             throw new RuntimeException("Erro ao conectar ao Banco.");
         }
     }
 }
