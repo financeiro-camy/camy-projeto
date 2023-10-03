@@ -37,7 +37,7 @@ public class ProjetoCofrinho {
             return id;
         }
     
-        public int getIdUsuario() {
+        public int getId_usuario() {
             return id_usuario;
         }
     
@@ -61,7 +61,7 @@ public class ProjetoCofrinho {
             return descricao;
         }
     
-        public boolean isAtivo() {
+        public boolean getAtivo() {
             return ativo;
         }
     
@@ -96,14 +96,6 @@ public class ProjetoCofrinho {
         public void setAtivo(boolean ativo) {
             this.ativo = ativo;
         }
-
-        public int getId_usuario() {
-            return id_usuario;
-        }
-
-        public boolean getAtivo() {
-            return false;
-        }    
 
         @Override
         public String toString() {
