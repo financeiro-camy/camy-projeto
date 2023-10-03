@@ -1,18 +1,18 @@
 package implementacaojdbc.DataAccessObject;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class ProjetoCofrinho {
-            private int id;
+        private int id;
         private int id_usuario;
         private String nome;
         private String descricao;
-        private Date prazo;
-        private Date data_criacao;
+        private LocalDate prazo;
+        private LocalDate data_criacao;
         private double meta_quantia;
         private boolean ativo;
     
-    public ProjetoCofrinho(int id, int id_usuario, String nome, String descricao, Date prazo, Date data_criacao, double meta_quantia, boolean ativo){
+    public ProjetoCofrinho(int id, int id_usuario, String nome, String descricao, LocalDate prazo, LocalDate data_criacao, double meta_quantia, boolean ativo){
         this.id = id;
         this.id_usuario = id_usuario;
         this.nome = nome;
@@ -23,7 +23,7 @@ public class ProjetoCofrinho {
         this.ativo = ativo;
     }
     
-    public ProjetoCofrinho(int id_usuario, String nome, String descricao, Date prazo, Date data_criacao, double meta_quantia, boolean ativo){
+    public ProjetoCofrinho(int id_usuario, String nome, String descricao, LocalDate prazo, LocalDate data_criacao, double meta_quantia, boolean ativo){
         this.id_usuario = id_usuario;
         this.nome = nome;
         this.descricao = descricao;
@@ -45,11 +45,11 @@ public class ProjetoCofrinho {
             return nome;
         }
     
-        public Date getPrazo() {
+        public LocalDate getPrazo() {
             return prazo;
         }
     
-        public Date getDataCriacao() {
+        public LocalDate getDataCriacao() {
             return data_criacao;
         }
     
@@ -77,11 +77,11 @@ public class ProjetoCofrinho {
             this.nome = nome;
         }
     
-        public void setPrazo(Date prazo) {
+        public void setPrazo(LocalDate prazo) {
             this.prazo = prazo;
         }
     
-        public void setDataCriacao(Date data_criacao) {
+        public void setDataCriacao(LocalDate data_criacao) {
             this.data_criacao = data_criacao;
         }
     
