@@ -99,6 +99,7 @@ public class ProjetoCofrinho {
 
         @Override
         public String toString() {
-            return "Projeto Cofrinho [id=" + id + ", nome=" + nome + ", descrição=" + descricao + ", prazo =" + prazo + ", criação =" + data_criacao + ", meta =" + meta_quantia + ", ativo" + ativo + "]";
+            return "Projeto Cofrinho [id=" + id + ", nome=" + nome + ", descrição=" + descricao + ", prazo =" + prazo + ", criação =" + data_criacao + ", meta =" + meta_quantia + ", ativo =" + ativo + "]";
         }
+
     }
