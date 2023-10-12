@@ -3,9 +3,11 @@ import java.time.LocalDate;
 import java.sql.SQLException;
 
 public class PrincipalInserts {
-    public static void main(String[] args) throws SQLException {
+    
+
+	public static void main(String[] args) throws SQLException {
         
-        ProjetoCofrinhoDAO projetoCofrinhoDAO = new ProjetoCofrinhoDAO();
+        /*ProjetoCofrinhoDAO projetoCofrinhoDAO = new ProjetoCofrinhoDAO();
 
         LocalDate prazo = LocalDate.of(2023, 4, 20);
         LocalDate dataCriacao = LocalDate.of(2023, 9, 23);
@@ -20,11 +22,22 @@ public class PrincipalInserts {
         ProjetoCofrinho projetoCriado2 = projetoCofrinhoDAO.create(projetoCofrinho2);
         ProjetoCofrinho projetoCriado3 = projetoCofrinhoDAO.create(projetoCofrinho3);
         ProjetoCofrinho projetoCriado4 = projetoCofrinhoDAO.create(projetoCofrinho4);
-        ProjetoCofrinho projetoCriado5 = projetoCofrinhoDAO.create(projetoCofrinho5);
+        ProjetoCofrinho projetoCriado5 = projetoCofrinhoDAO.create(projetoCofrinho5); */
 
-        //System.out.println(projetoCriado3.getId());
-        System.out.println(projetoCofrinhoDAO.findById(2));
+        CategoriaDAO categoriaDAO = new CategoriaDAO();
 
+        Categoria categoria1 = new Categoria (1,1,"Alimentação");
+        Categoria categoria2 = new Categoria (2,1,"Saúde");
+        Categoria categoria3 = new Categoria (3,1,"Lazer");
+
+        categoriaDAO.create(categoria1);
+         categoriaDAO.create(categoria2);
+          categoriaDAO.create(categoria3);
+
+
+
+
+        
     }
 }
 

@@ -10,7 +10,7 @@ public static void main(String[] args) throws SQLException {
 
 	ProjetoCofrinhoDAO projetoCofrinhoDAO3 = new ProjetoCofrinhoDAO();
 	ProjetoCofrinho projetoToUpdate = new ProjetoCofrinho(6,1, "Viagem Milão", "A viagem dos meus sonhos", prazo, dataCriacao, 15000.00,true);
-	projetoToUpdate.setId(6); 
+	projetoToUpdate.setId(7); 
 	projetoToUpdate.setIdUsuario(1);
 	projetoToUpdate.setNome("Franquia Mc Donald's"); 
 	projetoToUpdate.setDescricao("comer hamburguer de graça todos os dias");
@@ -21,6 +21,7 @@ public static void main(String[] args) throws SQLException {
 
     projetoCofrinhoDAO3.create(projetoToUpdate);
 
+	
 	try {
     	ProjetoCofrinho projetoAtualizado = projetoCofrinhoDAO3.update(projetoToUpdate);
     	if (projetoAtualizado != null) {
@@ -30,8 +31,8 @@ public static void main(String[] args) throws SQLException {
     	}
 	} catch (SQLException e) {
     	System.out.println("Erro SQL ao atualizar o projeto: " + e.getMessage());
-	}
-}
+	} 
+} 
 
 
 }
