@@ -1,5 +1,6 @@
 package implementacaojdbc.DataAccessObject;
 import java.time.LocalDate;
+import java.util.Map;
 import java.sql.SQLException;
 
 public class PrincipalInserts {
@@ -32,15 +33,38 @@ public class PrincipalInserts {
 
         categoriaDAO.create(categoria1);
         categoriaDAO.create(categoria2);
-        categoriaDAO.create(categoria3); */
+        categoriaDAO.create(categoria3); 
 
         RelatorioPCDAO relatorioPCDAO = new RelatorioPCDAO();
         LocalDate datainsercao = LocalDate.of(2023, 10, 10);
         
         RelatorioPC relatorioPC = new RelatorioPC(1,1,1,240.0,datainsercao);
 
-        relatorioPCDAO.create(relatorioPC);
+        relatorioPCDAO.create(relatorioPC); */
 
+         LocalDate prazo = LocalDate.of(2023, 4, 20);
+        LocalDate dataCriacao = LocalDate.of(2023, 9, 23);
+        ProjetoCofrinho projetoCofrinho = new ProjetoCofrinho (1,1, "Viagem Milão", "A viagem dos meus sonhos", prazo, dataCriacao, 15000.00,true);
+
+         try {
+        RelatorioPCDAO relatorioPCDAO = new RelatorioPCDAO();
+        Map<String, Double> resultado = relatorioPCDAO.valorArrecadado(projetoCofrinho);
+
+        if (!resultado.isEmpty()) {
+            double totalArrecadado = resultado.get("Projeto");
+            double quantiaRestante = resultado.get("QuantiaRestante");
+            double percentual = resultado.get("Percentual");
+
+            System.out.println("Projeto: " + projetoCofrinho.getNome());
+            System.out.println("Total arrecadado: " + totalArrecadado);
+            System.out.println("Quantia restante: " + quantiaRestante);
+            System.out.println("Percentual: " + percentual + "%");
+        } else {
+            System.out.println("Nenhum resultado encontrado para o projeto com ID " + projetoCofrinho.getId());
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
 
 
 

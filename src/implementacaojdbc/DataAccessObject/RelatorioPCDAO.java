@@ -119,35 +119,40 @@ public class RelatorioPCDAO {
             }
         }
 
-        public Map<String, Double> valorArrecadado(int idProjeto) throws SQLException {
-    String sql = "SELECT pc.nome AS Projeto, SUM(rpc.valor) AS TotalArrecadado " +
-                 "FROM RelatorioPC rpc " +
-                 "INNER JOIN ProjetoCofrinho pc ON rpc.id_cofrinho = pc.id " +
-                 "WHERE rpc.id_cofrinho = ?;";
-
-    Map<String, Double> resultado = new HashMap<>();
-
-    try (
-        Connection connection = Conexao.getConnection();
-        PreparedStatement statement = connection.prepareStatement(sql);
-    ) {
-        statement.setInt(1, idProjeto);
-
-        ResultSet rs = statement.executeQuery();
-
-        if (rs.next()) {
-            String projeto = rs.getString("Projeto");
-            double totalArrecadado = rs.getDouble("TotalArrecadado");
-
-            resultado.put(projeto, totalArrecadado);
+        public Map<String, Double> valorArrecadado(ProjetoCofrinho projetoCofrinho) throws SQLException {
+            String sql = "SELECT pc.nome AS Projeto, SUM(rpc.valor) AS TotalArrecadado, (pc.meta_quantia - SUM(rpc.valor)) AS QuantiaRestante " +
+                         "FROM RelatorioPC rpc " +
+                         "INNER JOIN ProjetoCofrinho pc ON rpc.id_cofrinho = pc.id " +
+                         "WHERE rpc.id_cofrinho = ?;";
+            
+            Map<String, Double> resultado = new HashMap<>();
+            
+            try (
+                Connection connection = Conexao.getConnection();
+                PreparedStatement statement = connection.prepareStatement(sql);
+            ) {
+                statement.setInt(1, projetoCofrinho.getId());
+            
+                ResultSet rs = statement.executeQuery();
+            
+                if (rs.next()) {
+                    String projeto = rs.getString("Projeto");
+                    double totalArrecadado = rs.getDouble("TotalArrecadado");
+                    double quantiaRestante = rs.getDouble("QuantiaRestante");
+                    double percentual = (totalArrecadado/projetoCofrinho.getMetaQuantia())*100; 
+            
+                    resultado.put("Projeto", totalArrecadado);
+                    resultado.put("QuantiaRestante", quantiaRestante);
+                    resultado.put("Percentual", percentual);
+                }
+            
+                rs.close();
+            }
+            
+            return resultado;
         }
-
-        rs.close();
-    }
-
-    return resultado;
-}
-
+        
+        
 private RelatorioPC resultSetToRelatorioPC(ResultSet rs) throws SQLException {
             return new RelatorioPC(
                 rs.getInt("id"),
