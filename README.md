@@ -8,8 +8,7 @@ Repositório destinado aos códigos do projeto de gerenciador financeiro
 - Usuario 
 - Categoria
 - ContasDinheiro
-- Despesa
-- Receita
+- Lancamento
 - Parcela
 - ProjetoCofrinho
 - RelatorioPC
