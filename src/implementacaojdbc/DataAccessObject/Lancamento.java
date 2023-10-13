@@ -22,7 +22,7 @@ public class Lancamento {
         this.nome = nome;
         this.descricao = descricao;
         this.valor = valor;
-        this.tipo = tipo;
+        setTipo(tipo);
         this.periodicidade = periodicidade;
         this.numeroParcelas = numeroParcelas;
         this.dataVencimento = dataVencimento;
@@ -37,7 +37,7 @@ public class Lancamento {
         this.nome = nome;
         this.descricao = descricao;
         this.valor = valor;
-        this.tipo = tipo;
+        setTipo(tipo);
         this.periodicidade = periodicidade;
         this.numeroParcelas = numeroParcelas;
         this.dataVencimento = dataVencimento;
@@ -100,7 +100,11 @@ public class Lancamento {
     }
 
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+            if ("despesa".equals(tipo) || "receita".equals(tipo)) {
+                this.tipo = tipo;
+            } else {
+                throw new IllegalArgumentException("O tipo de lançamento deve ser 'despesa' ou 'receita'.");
+            }
     }
 
     public String getPeriodicidade() {
