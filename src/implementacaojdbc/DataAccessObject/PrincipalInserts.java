@@ -22,7 +22,7 @@ public class PrincipalInserts {
         ProjetoCofrinho projetoCriado2 = projetoCofrinhoDAO.create(projetoCofrinho2);
         ProjetoCofrinho projetoCriado3 = projetoCofrinhoDAO.create(projetoCofrinho3);
         ProjetoCofrinho projetoCriado4 = projetoCofrinhoDAO.create(projetoCofrinho4);
-        ProjetoCofrinho projetoCriado5 = projetoCofrinhoDAO.create(projetoCofrinho5); */
+        ProjetoCofrinho projetoCriado5 = projetoCofrinhoDAO.create(projetoCofrinho5); 
 
         CategoriaDAO categoriaDAO = new CategoriaDAO();
 
@@ -31,8 +31,15 @@ public class PrincipalInserts {
         Categoria categoria3 = new Categoria (3,1,"Lazer");
 
         categoriaDAO.create(categoria1);
-         categoriaDAO.create(categoria2);
-          categoriaDAO.create(categoria3);
+        categoriaDAO.create(categoria2);
+        categoriaDAO.create(categoria3); */
+
+        RelatorioPCDAO relatorioPCDAO = new RelatorioPCDAO();
+        LocalDate datainsercao = LocalDate.of(2023, 10, 10);
+        
+        RelatorioPC relatorioPC = new RelatorioPC(1,1,1,240.0,datainsercao);
+
+        relatorioPCDAO.create(relatorioPC);
 
 
 
