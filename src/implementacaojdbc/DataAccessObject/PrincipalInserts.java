@@ -42,12 +42,17 @@ public class PrincipalInserts {
 
         relatorioPCDAO.create(relatorioPC); */
 
+        LocalDate datainsercao = LocalDate.of(2023, 10, 10);
+        
+        RelatorioPCDAO relatorioPCDAO = new RelatorioPCDAO();
+        RelatorioPC relatorioPC = new RelatorioPC (12,1,1,12240.0,datainsercao);
+        relatorioPCDAO.create(relatorioPC);
+
          LocalDate prazo = LocalDate.of(2023, 4, 20);
         LocalDate dataCriacao = LocalDate.of(2023, 9, 23);
         ProjetoCofrinho projetoCofrinho = new ProjetoCofrinho (1,1, "Viagem Milão", "A viagem dos meus sonhos", prazo, dataCriacao, 15000.00,true);
 
          try {
-        RelatorioPCDAO relatorioPCDAO = new RelatorioPCDAO();
         Map<String, Double> resultado = relatorioPCDAO.valorArrecadado(projetoCofrinho);
 
         if (!resultado.isEmpty()) {

@@ -126,6 +126,7 @@ public class RelatorioPCDAO {
                          "WHERE rpc.id_cofrinho = ?;";
             
             Map<String, Double> resultado = new HashMap<>();
+            double totalArrecadado = 0.0; // Inicialize totalArrecadado
             
             try (
                 Connection connection = Conexao.getConnection();
@@ -137,9 +138,9 @@ public class RelatorioPCDAO {
             
                 if (rs.next()) {
                     String projeto = rs.getString("Projeto");
-                    double totalArrecadado = rs.getDouble("TotalArrecadado");
+                    totalArrecadado = rs.getDouble("TotalArrecadado");
                     double quantiaRestante = rs.getDouble("QuantiaRestante");
-                    double percentual = (totalArrecadado/projetoCofrinho.getMetaQuantia())*100; 
+                    double percentual = (totalArrecadado / projetoCofrinho.getMetaQuantia()) * 100; 
             
                     resultado.put("Projeto", totalArrecadado);
                     resultado.put("QuantiaRestante", quantiaRestante);
@@ -149,9 +150,16 @@ public class RelatorioPCDAO {
                 rs.close();
             }
             
+            if (totalArrecadado == projetoCofrinho.getMetaQuantia()) {
+                projetoCofrinho.setAtivo(false); 
+                System.out.println("Projeto já completado!Parabéns!");
+            }
+            
             return resultado;
         }
         
+        
+
         
 private RelatorioPC resultSetToRelatorioPC(ResultSet rs) throws SQLException {
             return new RelatorioPC(

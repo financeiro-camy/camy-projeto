@@ -53,7 +53,7 @@ public class ProjetoCofrinhoDAO {
             statement.setInt(1, projetoCofrinho.getId_usuario());
             statement.setString(2, projetoCofrinho.getNome());
             statement.setString(3, projetoCofrinho.getDescricao());
-             statement.setDate(4, Date.valueOf(projetoCofrinho.getPrazo()));
+            statement.setDate(4, Date.valueOf(projetoCofrinho.getPrazo()));
             statement.setDate(5, Date.valueOf(projetoCofrinho.getDataCriacao()));
             statement.setDouble(6, projetoCofrinho.getMetaQuantia());          
             statement.setBoolean(7, projetoCofrinho.getAtivo());
