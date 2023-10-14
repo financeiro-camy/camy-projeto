@@ -8,7 +8,19 @@ public class PrincipalInserts {
 
 	public static void main(String[] args) throws SQLException {
         
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
     
+     Usuario usuario1 = new Usuario(1, "João Silva", "joao@email.com", "e7d80ffeefa212b7c5c55700e4f7193e", true);
+     Usuario usuario2 = new Usuario(2, "Maria Santos", "maria@email.com", "58cb14423e912245bd2ef8a6841eba75", true);
+     Usuario usuario3 = new Usuario(3, "Pedro Oliveira", "pedro@email.com", "e10adc3949ba59abbe56e057f20f883e", true);
+     Usuario usuario4 = new Usuario(4, "Ana Pereira", "ana@email.com", "7c67e713a4b4139702de1a4fac672344", true);
+     Usuario usuario5 = new Usuario(5, "Luiz Fernandes", "luiz@email.com", "ac152b7ba40ea05c7ba71b8e7c941cf4", true);
+
+     usuarioDAO.create(usuario2);
+     usuarioDAO.create(usuario3);
+     usuarioDAO.create(usuario4);
+     usuarioDAO.create(usuario5);
+
       ContasDinheiroDAO contasDinheiroDAO = new ContasDinheiroDAO();
       ContasDinheiro contasDinheiro1 = new ContasDinheiro(2,1,"Conta Sylvanian",56789.00,LocalDate.of(2023, 10, 13));
       contasDinheiroDAO.create(contasDinheiro1);
