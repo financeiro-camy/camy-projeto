@@ -114,6 +114,32 @@ public class LancamentoDAO {
         return lancamentos;
     }
 
+    /*public List<Lancamento> despesasNaoPagas(int id_usuario) throws SQLException {
+        String sql = """
+            SELECT l.nome AS Nome, l.valor AS Valor, l.data_vencimento AS Data_vencimento 
+            FROM ContasDinheiro cd
+            INNER JOIN Lancamento l ON cd.id = l.id_conta
+            WHERE cd.id_usuario = ? AND l.tipo = 'despesa' AND l.pago = FALSE
+            ORDER BY l.data_vencimento ASC;
+            """;
+        List<Lancamento> despesas = new ArrayList<>();
+
+         try (
+            Connection connection = Conexao.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setInt(1, id_usuario);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                Lancamento despesa = resultSetToLancamento(resultSet);
+                despesas.add(despesa);
+            }
+        }
+
+        return despesas;
+    }
+*/
     private Lancamento resultSetToLancamento(ResultSet rs) throws SQLException {
         return new Lancamento(
             rs.getInt("id"),

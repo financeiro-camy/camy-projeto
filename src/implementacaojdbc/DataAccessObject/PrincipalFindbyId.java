@@ -25,6 +25,8 @@ public class PrincipalFindbyId {
 
         LancamentoDAO lancamentoDAO = new LancamentoDAO();
         System.out.println(lancamentoDAO.findById(4));
+
+       
    
     }}
     
