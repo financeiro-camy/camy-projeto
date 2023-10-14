@@ -16,6 +16,9 @@ public class PrincipalFindbyId {
         System.out.println(categoriaDAO.findById(1));
         System.out.println(categoriaDAO.findById(2));
         System.out.println(categoriaDAO.findById(3)); */
+
+        ContasDinheiroDAO contasDinheiroDAO = new ContasDinheiroDAO();
+        System.out.println(contasDinheiroDAO.findById(2));
    
     }}
     

@@ -118,6 +118,31 @@ public class ContasDinheiroDAO {
         }
     }
 
+    public ContasDinheiro findById(Integer id) {
+        String sql = "SELECT * FROM ContasDinheiro WHERE id = ?;";
+
+        try (
+            Connection connection = Conexao.getConnection();
+            PreparedStatement statement = connection.prepareStatement(sql);
+        ) {
+            statement.setInt(1, id);
+            
+            ResultSet rs = statement.executeQuery();
+
+            if (rs.next()) {
+                return resultSetToContasDinheiro(rs);
+            }
+
+            rs.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return null;
+    }
+
     private ContasDinheiro resultSetToContasDinheiro(ResultSet rs) throws SQLException {
         return new ContasDinheiro(
             rs.getInt("id"),
