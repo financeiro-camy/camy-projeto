@@ -12,8 +12,8 @@ import java.util.List;
 public class ContasDinheiroDAO {
     public ContasDinheiro create(ContasDinheiro conta) throws SQLException {
         String sql = """
-            INSERT INTO ContasDinheiro (nome, saldo_inicial, data_saldo_inicial)
-            VALUES (?, ?, ?);
+            INSERT INTO ContasDinheiro (id, id_usuario, nome, saldo_inicial, data_saldo_inicial)
+            VALUES (?, ?, ?, ?, ?);
         """;
 
         try (
@@ -21,9 +21,11 @@ public class ContasDinheiroDAO {
             PreparedStatement statement = connection
                 .prepareStatement(sql);
         ) {
-            statement.setString(1, conta.getNome());
-            statement.setDouble(2, conta.getSaldoInicial());
-            statement.setDate(3, Date.valueOf(conta.getDataSaldoInicial()));
+            statement.setInt(1,conta.getId());
+            statement.setInt(2,conta.getId_usuario());
+            statement.setString(3, conta.getNome());
+            statement.setDouble(4, conta.getSaldoInicial());
+            statement.setDate(5, Date.valueOf(conta.getDataSaldoInicial()));
 
             statement.executeUpdate();
 
@@ -34,8 +36,8 @@ public class ContasDinheiroDAO {
     public ContasDinheiro update(ContasDinheiro conta) throws SQLException {
         String sql = """
             UPDATE ContasDinheiro 
-            SET saldo_inicial = ?, data_saldo_inicial = ?
-            WHERE nome = ?;
+            SET nome = ?, saldo_inicial = ?, data_saldo_inicial = ?
+            WHERE id = ?;
         """;
 
         try (
@@ -118,6 +120,8 @@ public class ContasDinheiroDAO {
 
     private ContasDinheiro resultSetToContasDinheiro(ResultSet rs) throws SQLException {
         return new ContasDinheiro(
+            rs.getInt("id"),
+            rs.getInt("id_usuario"),
             rs.getString("nome"),
             rs.getDouble("saldo_inicial"),
             rs.getDate("data_saldo_inicial").toLocalDate()

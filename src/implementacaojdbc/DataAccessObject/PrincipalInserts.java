@@ -42,13 +42,20 @@ public class PrincipalInserts {
 
         relatorioPCDAO.create(relatorioPC); */
 
-        LocalDate datainsercao = LocalDate.of(2023, 10, 10);
+        /*LocalDate datainsercao = LocalDate.of(2023, 10, 10);
         
         RelatorioPCDAO relatorioPCDAO = new RelatorioPCDAO();
+        /* 
         RelatorioPC relatorioPC = new RelatorioPC (12,1,1,12240.0,datainsercao);
-        relatorioPCDAO.create(relatorioPC);
+        relatorioPCDAO.create(relatorioPC); */
 
-         LocalDate prazo = LocalDate.of(2023, 4, 20);
+        /*LocalDate datainsercao1 = LocalDate.of(2023, 10, 10);
+        
+        RelatorioPC relatorioPC1 = new RelatorioPC(34,2,1,12400.0,datainsercao);
+
+        relatorioPCDAO.create(relatorioPC1); 
+
+        /*  LocalDate prazo = LocalDate.of(2023, 4, 20);
         LocalDate dataCriacao = LocalDate.of(2023, 9, 23);
         ProjetoCofrinho projetoCofrinho = new ProjetoCofrinho (1,1, "Viagem Milão", "A viagem dos meus sonhos", prazo, dataCriacao, 15000.00,true);
 
@@ -73,7 +80,10 @@ public class PrincipalInserts {
 
 
 
-        
+      */  
+      ContasDinheiroDAO contasDinheiroDAO = new ContasDinheiroDAO();
+      ContasDinheiro contasDinheiro1 = new ContasDinheiro(2,1,"Conta Sylvanian",56789.00,LocalDate.of(2023, 10, 13));
+      contasDinheiroDAO.create(contasDinheiro1);
     }
 }
 

@@ -3,14 +3,33 @@ package implementacaojdbc.DataAccessObject;
     import java.time.LocalDate;
 
 public class ContasDinheiro {
+    private int id;
+    private int id_usuario;
     private String nome;
     private double saldoInicial;
     private LocalDate dataSaldoInicial;
 
-    public ContasDinheiro(String nome, double saldoInicial, LocalDate dataSaldoInicial) {
+    public ContasDinheiro(int id,int id_usuario, String nome, double saldoInicial, LocalDate dataSaldoInicial) {
+        this.id = id;
+        this.id_usuario = id_usuario;
         this.nome = nome;
         this.saldoInicial = saldoInicial;
         this.dataSaldoInicial = dataSaldoInicial;
+    }
+
+    public ContasDinheiro(int id_usuario, String nome, double saldoInicial, LocalDate dataSaldoInicial) {
+        this.id_usuario = id_usuario;
+        this.nome = nome;
+        this.saldoInicial = saldoInicial;
+        this.dataSaldoInicial = dataSaldoInicial;
+    }
+
+    public int getId(){
+        return id;
+    }
+
+    public int getId_usuario(){
+        return id_usuario;
     }
 
     public String getNome() {
