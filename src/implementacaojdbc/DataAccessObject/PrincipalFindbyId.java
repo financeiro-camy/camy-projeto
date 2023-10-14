@@ -22,6 +22,9 @@ public class PrincipalFindbyId {
 
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         System.out.println(usuarioDAO.findById(3));
+
+        LancamentoDAO lancamentoDAO = new LancamentoDAO();
+        System.out.println(lancamentoDAO.findById(4));
    
     }}
     

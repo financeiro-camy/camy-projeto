@@ -146,6 +146,11 @@ public class Lancamento {
     public void setDataPagamento(LocalDate dataPagamento) {
         this.dataPagamento = dataPagamento;
     }
+
+    @Override
+    public String toString() {
+        return "Lancamento [id = " + id + ", id_categoria = " + idCategoria + ", id_conta = " + idConta + ", nome = " + nome + ", descrição =" + descricao + ", valor =" + valor + ", periodicidade =" + periodicidade + ", numero_parcelas"+ numeroParcelas +", data_vencimento =" + dataVencimento + ", pago =" +"data_pagamento ="+ dataPagamento+"]";
+    }
 }
 
 
