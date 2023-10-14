@@ -61,4 +61,9 @@ public class Usuario {
         public void setAtivo(boolean ativo) {
             this.ativo = ativo;
         }
+
+        @Override
+    public String toString() {
+        return "Usuário [id = " + id + ", nome = " + nome + ", email = " + email + ", senha = " + senha + ", ativo =" + ativo + "]";
+    }
     }
