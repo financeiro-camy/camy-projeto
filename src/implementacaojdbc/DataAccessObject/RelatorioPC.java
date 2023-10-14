@@ -65,6 +65,6 @@ public class RelatorioPC {
 
     @Override
     public String toString() {
-        return "RelatorioPC [id =" + id + ", id_cofrinho =" + id_cofrinho + ", id_conta = " + id_conta + "valor =" + valor + "data_insercao =" + data_insercao + "]";
+        return "RelatorioPC [id =" + id + ", id_cofrinho =" + id_cofrinho + ", id_conta = " + id_conta + ", valor =" + valor + ", data_insercao =" + data_insercao + "]";
     }
 }
