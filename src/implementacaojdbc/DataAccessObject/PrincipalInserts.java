@@ -16,6 +16,7 @@ public class PrincipalInserts {
      Usuario usuario4 = new Usuario(4, "Ana Pereira", "ana@email.com", "7c67e713a4b4139702de1a4fac672344", true);
      Usuario usuario5 = new Usuario(5, "Luiz Fernandes", "luiz@email.com", "ac152b7ba40ea05c7ba71b8e7c941cf4", true);
 
+     usuarioDAO.create(usuario1);
      usuarioDAO.create(usuario2);
      usuarioDAO.create(usuario3);
      usuarioDAO.create(usuario4);
@@ -101,4 +102,3 @@ public class PrincipalInserts {
         
     }
 }
-
