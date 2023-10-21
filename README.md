@@ -20,4 +20,4 @@ Repositório destinado aos códigos do projeto de gerenciador financeiro
 
 # Informações adicionais
 
-- Neste aplicativo desktop, serão utilizadas as linguagens, JavaFX, Java, SQL
+- Neste aplicativo desktop, serão utilizadas as linguagens, Java, SQL
